@@ -3,7 +3,8 @@ import axios from "axios";
 import { Post } from "@/types/post";
 
 const fetchPostById = async (id: string): Promise<Post> => {
-  const response = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`);
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+  const response = await axios.get(`${baseUrl}/posts/${id}`);
   return response.data;
 };
 

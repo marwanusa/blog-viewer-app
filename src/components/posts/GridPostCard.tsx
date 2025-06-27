@@ -22,7 +22,7 @@ export default function GridPostCard({ post }: Props) {
           />
           <div className="p-4">
             <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">Sunday, 1 Jan 2023</p>
-            <h3 className="text-lg font-semibold text-black dark:text-white mb-1">
+            <h3 className="text-lg font-semibold text-black dark:text-white mb-1 whitespace-nowrap overflow-hidden text-ellipsis">
               {post.title}
             </h3>
             <p className="text-sm text-gray-700 dark:text-gray-300 line-clamp-2">
