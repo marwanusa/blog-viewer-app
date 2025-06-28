@@ -9,26 +9,26 @@ type Props = {
 
 export default function GridPostCard({ post }: Props) {
   return (
-<div className="relative group cursor-pointer md:max-w-full max-w-[350px] mx-auto sm:mx-0">
-      <div className="bg-white dark:bg-[#10172A] rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 w-full ">
+    <div className="relative group cursor-pointer w-full h-full">
+      <div className="bg-white dark:bg-[#10172A] rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 h-full flex flex-col">
         <Link href={`/posts/${post.id}`}>
-          <div>
+          <div className="relative w-full h-48 sm:h-52 md:h-56 lg:h-48 xl:h-52">
             <Image
               src={`https://picsum.photos/seed/${post.id}/1200/500`}
               alt={post.title}
-              width={1200}
-              height={500}
-              className="w-full h-48 object-cover"
+              fill
+              className="object-cover rounded-t-xl"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
           </div>
         </Link>
 
-        <div className="p-4">
+        <div className="p-4 flex flex-col flex-grow">
           <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">Sunday, 1 Jan 2023</p>
           <h3 className="text-lg font-semibold text-black dark:text-white mb-1 whitespace-nowrap overflow-hidden text-ellipsis">
             {post.title}
           </h3>
-          <p className="text-sm text-gray-700 dark:text-gray-300 line-clamp-2">
+          <p className="text-sm text-gray-700 dark:text-gray-300 line-clamp-2 flex-grow">
             {post.body}
           </p>
           <PostTags />
